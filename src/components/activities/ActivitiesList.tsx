@@ -1,56 +1,55 @@
 
+import { ExternalLink } from 'lucide-react';
 import ActivityCard from './ActivityCard';
 
 // Sample activities data
 const activities = [
   {
     id: 1,
-    title: 'Community Outreach Programs',
-    description: 'Regular service initiatives that extend Shakti principles of compassion and nurturing energy to those in need.',
-    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1470&auto=format&fit=crop',
-    items: [
-      'Monthly food distribution to local shelters',
-      'Free healing energy sessions for the elderly',
-      'Educational workshops in underserved communities',
-      'Environmental cleanup and nature connection activities'
-    ]
+    title: 'Mother Divine Retreat',
+    date: 'June 15-20, 2023',
+    location: 'Himalayan Ashram, India',
+    description: 'A 5-day immersive retreat focusing on Shakti meditation techniques and divine feminine awakening practices.',
+    image: '/placeholder.svg'
   },
   {
     id: 2,
-    title: 'Special Ceremonies & Celebrations',
-    description: 'Honoring significant cosmic cycles and traditional festivals that align with divine feminine energy.',
-    image: 'https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?q=80&w=1470&auto=format&fit=crop',
-    items: [
-      'Nine Nights of the Goddess (Navratri) celebration',
-      'Full moon and new moon ceremonies',
-      'Spring equinox energy renewal ritual',
-      'Divine Mother festival with cultural performances'
-    ]
+    title: 'Urban Shakti Workshop Series',
+    date: 'Monthly, First Sunday',
+    location: 'Various City Locations',
+    description: 'A recurring workshop bringing Shakti practices to urban centers, making ancient wisdom accessible to modern practitioners.',
+    image: '/placeholder.svg'
   },
   {
     id: 3,
-    title: 'Educational Programs',
-    description: 'Structured learning opportunities for deepening understanding of Shakti principles and practices.',
-    image: 'https://images.unsplash.com/photo-1603387388156-6f142c5752b4?q=80&w=1470&auto=format&fit=crop',
-    items: [
-      'Six-week introduction to Shakti meditation course',
-      'Weekend workshops on various aspects of feminine energy',
-      'Guest lectures by renowned spiritual teachers',
-      'Children's program on cosmic energy awareness'
-    ]
-  }
+    title: 'Divine Feminine Conference',
+    date: 'September 21-23, 2023',
+    location: 'Global Virtual Event',
+    description: 'An online gathering of teachers, practitioners, and seekers exploring the resurgence of divine feminine consciousness.',
+    image: '/placeholder.svg'
+  },
+  /* Additional activities can be added here */
 ];
 
 const ActivitiesList = () => {
   return (
-    <div className="space-y-16 mb-16">
-      {activities.map((activity, index) => (
-        <ActivityCard 
-          key={activity.id} 
-          activity={activity} 
-          index={index} 
-        />
-      ))}
+    <div>
+      <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 text-center">Upcoming Activities</h2>
+      <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+        Join our community events to deepen your practice and connect with fellow seekers.
+      </p>
+      
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {activities.map((activity) => (
+          <ActivityCard key={activity.id} activity={activity} />
+        ))}
+      </div>
+      
+      <div className="mt-12 text-center">
+        <a href="#" className="text-shakti-500 font-medium hover:underline inline-flex items-center">
+          View All Activities <ExternalLink className="ml-1 w-4 h-4" />
+        </a>
+      </div>
     </div>
   );
 };
