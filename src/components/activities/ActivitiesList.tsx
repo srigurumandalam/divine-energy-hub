@@ -1,56 +1,65 @@
 
-import { ExternalLink } from 'lucide-react';
+import React from 'react';
 import ActivityCard from './ActivityCard';
 
-// Sample activities data
-const activities = [
+interface ActivityItem {
+  id: number;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+  image: string;
+  items?: string[];
+}
+
+const activities: ActivityItem[] = [
   {
     id: 1,
-    title: 'Mother Divine Retreat',
-    date: 'June 15-20, 2023',
-    location: 'Himalayan Ashram, India',
-    description: 'A 5-day immersive retreat focusing on Shakti meditation techniques and divine feminine awakening practices.',
-    image: '/placeholder.svg'
+    title: 'Weekly Shakti Meditation Circle',
+    date: 'Every Tuesday, 7:00 PM',
+    location: 'Community Center, Room 108',
+    description: 'Join our weekly meditation circle focused on awakening and nurturing your inner Shakti energy.',
+    image: 'meditation',
+    items: ['Guided meditation', 'Energy work', 'Group discussion']
   },
   {
     id: 2,
-    title: 'Urban Shakti Workshop Series',
-    date: 'Monthly, First Sunday',
-    location: 'Various City Locations',
-    description: 'A recurring workshop bringing Shakti practices to urban centers, making ancient wisdom accessible to modern practitioners.',
-    image: '/placeholder.svg'
+    title: 'Monthly Full Moon Ceremony',
+    date: 'Next: June 24, 8:30 PM',
+    location: 'Lakeside Park',
+    description: 'Experience the powerful connection between feminine energy and lunar cycles in our monthly ceremony.',
+    image: 'moon',
+    items: ['Ritual bathing', 'Chanting', 'Intention setting']
   },
   {
     id: 3,
-    title: 'Divine Feminine Conference',
-    date: 'September 21-23, 2023',
-    location: 'Global Virtual Event',
-    description: 'An online gathering of teachers, practitioners, and seekers exploring the resurgence of divine feminine consciousness.',
-    image: '/placeholder.svg'
+    title: 'Shakti Dance Workshop',
+    date: 'Last Saturday of each month, 10:00 AM',
+    location: 'Divine Movement Studio',
+    description: 'Express your divine feminine energy through movement in this guided dance workshop.',
+    image: 'dance',
+    items: ['Free-form movement', 'Guided visualization', 'Breath work']
   },
-  /* Additional activities can be added here */
+  {
+    id: 4,
+    title: 'Sacred Text Study Group',
+    date: 'Every Thursday, 6:30 PM',
+    location: 'Online (Zoom)',
+    description: 'Delve into ancient Shakta texts and discuss their relevance to modern spiritual practice.',
+    image: 'study',
+    items: ['Textual analysis', 'Historical context', 'Contemporary application']
+  }
 ];
 
-const ActivitiesList = () => {
+const ActivitiesList: React.FC = () => {
   return (
-    <div>
-      <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 text-center">Upcoming Activities</h2>
-      <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-        Join our community events to deepen your practice and connect with fellow seekers.
-      </p>
-      
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <section className="mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {activities.map((activity) => (
           <ActivityCard key={activity.id} activity={activity} />
         ))}
       </div>
-      
-      <div className="mt-12 text-center">
-        <a href="#" className="text-shakti-500 font-medium hover:underline inline-flex items-center">
-          View All Activities <ExternalLink className="ml-1 w-4 h-4" />
-        </a>
-      </div>
-    </div>
+    </section>
   );
 };
 
