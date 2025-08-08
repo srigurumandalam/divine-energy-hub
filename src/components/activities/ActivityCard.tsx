@@ -1,7 +1,7 @@
 
 import { ArrowRight } from 'lucide-react';
 
-interface ActivityItem {
+export interface ActivityItem {
   id: number;
   title: string;
   description: string;

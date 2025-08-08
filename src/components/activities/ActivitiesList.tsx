@@ -1,16 +1,6 @@
 
 import React from 'react';
-import ActivityCard from './ActivityCard';
-
-interface ActivityItem {
-  id: number;
-  title: string;
-  date: string;
-  location: string;
-  description: string;
-  image: string;
-  items?: string[];
-}
+import ActivityCard, { ActivityItem } from './ActivityCard';
 
 const activities: ActivityItem[] = [
   {
