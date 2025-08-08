@@ -3,7 +3,9 @@ import HeroSection from '@/components/home/HeroSection';
 import IntroSection from '@/components/home/IntroSection';
 import SectionPreview from '@/components/home/SectionPreview';
 import { Book, Calendar, Image, MessageCircle, Navigation, Video } from 'lucide-react';
-
+import HighlightsStrip from '@/components/home/HighlightsStrip';
+import ResourcesNews from '@/components/home/ResourcesNews';
+import { Helmet } from 'react-helmet-async';
 const Index = () => {
   // Define section previews
   const exploreSections = [
